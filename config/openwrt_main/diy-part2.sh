@@ -39,10 +39,7 @@ else
     echo '# CONFIG_DEVEL is not set' >>.config
     echo "# CONFIG_CCACHE is not set" >>.config
     echo 'CONFIG_CCACHE_DIR=""' >>.config
-    echo >> feeds.conf.default
-    echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-    ./scripts/feeds update istore
-    ./scripts/feeds install -d y -p istore luci-app-store
+    
 fi
 #
 # ------------------------------- Main source configuration ends -------------------------------
@@ -56,4 +53,5 @@ git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 # Apply patches
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 # ------------------------------- Additional customizations ends -------------------------------
